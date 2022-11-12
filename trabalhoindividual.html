@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link href="http://fonts.cdnfonts.com/css/brittany-signature" rel="stylesheet">
+    <link href="http://fonts.cdnfonts.com/css/thegoodmonolith" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/25bc4345e8.js" crossorigin="anonymous"></script>
+    <script src="../JavaScript/index.js" defer></script>
+    <title>Decodificador</title>
+</head>
+
+<body>
+    <main>
+        <hr>
+        <div class="cont">
+
+            <h1>decodificador</h1>
+
+            <div class="tag">
+                <p class="tag64">> base64</p>
+                <p class="tagcifra">> cifra de césar</p>
+            </div>
+
+            <form>
+
+                <textarea name="texto" id="texto" cols="50" rows="3" placeholder="Digite aqui"></textarea>
+                <!-- TEXTO -->
+
+                <!--Caixa de selecionar-->
+                <select name="select" id="select" class="select" onclick="selecao()">
+                    <option id="option" value="selecione">Selecione uma opção</option>
+                    <option id="base64" value="base64">Base64</option>
+                    <option id="cifra" value="cifra">Cifra de César</option>
+                </select>
+
+                <div class="chave-cont" id="chaveCont">
+                    <!--Chave para a cifra de César-->
+
+                    <label class="chave" for="range">Escolha uma chave:</label>
+
+                    <div class="deslize">
+                        <input type="range" value="1" min="1" max="26" class="range" id="range"
+                            oninput="rangenumber.value=value" />
+                        <input type="number" value="1" id="rangenumber" min="1" max="26" oninput="range.value=value" />
+                    </div>
+
+                </div>   
+                <div class="radiobtn">
+                    <!--Botões codificar e decodificar-->
+
+                    <div>
+                        <input type="radio" id="codificar" name="selecione" value="codificar" checked/>
+                        <label for="codificar">Codificar</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="decodificar" name="selecione" value="decodificar" />
+                        <label for="decodificar">Decodificar</label>
+                    </div>
+                </div>
+
+                <textarea id="resultado" cols="50" rows="3" placeholder="Resultado"></textarea>
+                <!--Resultado-->
+                <br>
+                <br>    
+                <div class="btn">
+                    <!--Botão para obter o resultado-->
+                    <button id="resultbtn">Codificar Mensagem!</button>
+                </div>
+
+            </form>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <hr>
+    </main>
+    <footer>
+        <section class="social">
+           
+            <a href="https://github.com/WillJr627" target="_blank"></a>
+
+        </section>
+    </footer>
+
+    <!-- Informações do Base64 -->
+    <div id="infoContainer" class="info-cont">
+
+        <button class="fechar">x</button>
+
+        <div id="info" class="info">
+            <h2 class="info-titulo">Base64</h2>
+            <br>
+            <p class="info-paragrafo">A codificação Base64 é um processo de conversão de dados binários em um formato de string ASCII, convertendo esses dados binários em uma representação de caracteres de 6 bits. O método Base64 de codificação é usado quando dados binários, como imagens ou vídeo, são transmitidos por sistemas projetados para transmitir dados em formato de texto simples (ASCII).</p>
+        </div>
+
+    </div>
+
+    <div id="cesarContainer" class="info-cont">
+
+        <button class="fechar">x</button>
+
+        <div id="cesar" class="info">
+            <h2 class="info-titulo">Cifra de Cesar</h2>
+            <br>
+            <p class="info-paragrafo">É um tipo de cifra de substituição na qual cada letra do texto é substituída por outra, que se apresenta no alfabeto abaixo dela um número fixo de vezes. Por exemplo, com uma troca de três posições, A seria substituído por D, B se tornaria E, e assim por diante. O nome do método é em homenagem a Júlio César, que o usou para se comunicar com os seus generais.</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
